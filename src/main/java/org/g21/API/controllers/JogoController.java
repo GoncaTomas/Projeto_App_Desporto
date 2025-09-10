@@ -38,9 +38,9 @@ public class JogoController {
     }
 
     @PostMapping("/jogo/criarjogo")
-    public String criarJogo(@RequestParam("datahora") String datahora,
-                            @RequestParam("local") String local,
-                            @RequestParam("equipaAdv") String equipaAdv,
+    public String criarJogo(@RequestParam String datahora,
+                            @RequestParam String local,
+                            @RequestParam String equipaAdv,
                             Model model) {
 
         Jogo novoJogo = new Jogo();
@@ -63,10 +63,10 @@ public class JogoController {
 
 
     @PostMapping("/jogo/editarjogo")
-    public String editarJogo(@RequestParam("idJogo") int idJogo,
-                             @RequestParam("datahora") String datahora,
-                             @RequestParam("local") String local,
-                             @RequestParam("equipaAdv") String equipaAdv,
+    public String editarJogo(@RequestParam int idJogo,
+                             @RequestParam String datahora,
+                             @RequestParam String local,
+                             @RequestParam String equipaAdv,
 
                              Model model) throws Exception {
 

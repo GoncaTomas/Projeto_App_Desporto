@@ -52,8 +52,8 @@ public class UserController {
 
     @PostMapping("/login")
     public String verificarLogin(Authentication authentication, // O objeto Authentication é preenchido pelo framework com as informações de autenticação fornecidas
-                                 @RequestParam("username") String username,
-                                 @RequestParam("password") String password,
+                                 @RequestParam String username,
+                                 @RequestParam String password,
                                  HttpSession session) {         //HttpSession para que o user permaneça autenticado em diferentes partes da app
 
         User user = userService.verificarLogin(username, password);
@@ -82,7 +82,7 @@ public class UserController {
     }
 
     @PostMapping("/perfil/editarperfil")
-    public String editarperfil(@ModelAttribute("user") User user, HttpSession session) {
+    public String editarperfil(@ModelAttribute User user, HttpSession session) {
         Integer idUser = (Integer) session.getAttribute("idUser");
         User existingUser = userRepository.findById(idUser).orElse(null);
 
@@ -115,7 +115,7 @@ public class UserController {
     }
 
     @PostMapping("/criarUser")
-    public String criarUser(@ModelAttribute("userDto") UserDto userDto) {
+    public String criarUser(@ModelAttribute UserDto userDto) {
 
         // criar um novo objeto User e salva-o no repositório de users
         User user = new User(userDto.getDataNasc(), userDto.getUsername(), userDto.getPassword(), userDto.getEmail(), userDto.getTelefone(), userDto.getRole());

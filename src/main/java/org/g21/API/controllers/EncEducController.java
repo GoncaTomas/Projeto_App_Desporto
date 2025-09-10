@@ -27,8 +27,8 @@ public class EncEducController {
     }
 
     @PostMapping("/encEduc/editarencEduc")
-    public String editarEncEduc(@RequestParam("idEncEduc") int idEncEduc,
-                                   @RequestParam("nomeFilho") String nomeFilho,
+    public String editarEncEduc(@RequestParam int idEncEduc,
+                                   @RequestParam String nomeFilho,
                                    Model model) {
         EncEduc encEduc = encEducService.getEncEduc(idEncEduc); // Procura pelo ID
             if (encEduc == null) {
@@ -49,7 +49,7 @@ public class EncEducController {
 
 
     @PostMapping("/encEduc/removerencEduc")
-    public String removerEncEduc(@RequestParam("id") int id, Model model) {
+    public String removerEncEduc(@RequestParam int id, Model model) {
         encEducService.deleteEncEducById(id);        
         model.addAttribute("mensagem", "Encarregado de Educação removido com sucesso!");
         return "redirect:/encEduc";

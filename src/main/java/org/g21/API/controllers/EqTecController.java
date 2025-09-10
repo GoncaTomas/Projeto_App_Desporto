@@ -36,9 +36,9 @@ public class EqTecController {
     }
 
     @PostMapping("/equipaTecnica/editarequipaTecnica")
-    public String criarEqTec(@RequestParam("idEqTec") int idEqTec,
-                             @RequestParam("escalaoAtuacao") String escalaoAtuacao,
-                             @RequestParam("mesesExperiencia") int mesesExperiencia,
+    public String criarEqTec(@RequestParam int idEqTec,
+                             @RequestParam String escalaoAtuacao,
+                             @RequestParam int mesesExperiencia,
                              Model model) {
 
         EqTec eqTec = eqTecService.getEqTecById(idEqTec); // Procura o profissional pelo ID
@@ -66,7 +66,7 @@ public class EqTecController {
 
 
     @PostMapping("/equipaTecnica/removerequipaTecnica")
-    public String removerEqTec(@RequestParam("id") int id, Model model) {
+    public String removerEqTec(@RequestParam int id, Model model) {
         eqTecService.deleteEqTecById(id);        
         model.addAttribute("mensagem", "Atleta removido com sucesso!");
         return "redirect:/equipaTecnica";

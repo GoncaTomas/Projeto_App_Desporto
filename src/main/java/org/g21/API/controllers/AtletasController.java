@@ -39,15 +39,15 @@ public class AtletasController {
         return "editaratleta";
     }
     @PostMapping("/atletas/editaratleta")
-    public String editarAtleta(@RequestParam("idAtleta") int idAtleta,
-                               @RequestParam("posicao") String posicao,
-                               @RequestParam("peso") double peso,
-                               @RequestParam("altura") double altura,
-                               @RequestParam("percentMassaMuscular") double percentMassaMuscular,
-                               @RequestParam("percentMassaGorda") double percentMassaGorda,
-                               @RequestParam("imc") double imc,
-                               @RequestParam("impulsao") double impulsao,
-                               @RequestParam("forca") double forca,
+    public String editarAtleta(@RequestParam int idAtleta,
+                               @RequestParam String posicao,
+                               @RequestParam double peso,
+                               @RequestParam double altura,
+                               @RequestParam double percentMassaMuscular,
+                               @RequestParam double percentMassaGorda,
+                               @RequestParam double imc,
+                               @RequestParam double impulsao,
+                               @RequestParam double forca,
                                Model model) throws Exception {
 
     Atletas atleta = atletasService.getAtletaById(idAtleta); // Procura o atleta pelo ID
@@ -78,7 +78,7 @@ public class AtletasController {
 
 
     @PostMapping("/atletas/removeratleta")
-    public String removerAtleta(@RequestParam("id") int id, Model model) {
+    public String removerAtleta(@RequestParam int id, Model model) {
         atletasService.deleteAtletaById(id);        
         model.addAttribute("mensagem", "Atleta removido com sucesso!");
         return "redirect:/atletas";

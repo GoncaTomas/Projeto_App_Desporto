@@ -28,8 +28,8 @@ public class CoordenadorController {
     }
 
     @PostMapping("/coordenador/editarcoordenador")
-    public String criarCoordenador(@RequestParam("idCoordenador") int idCoordenador,
-                                   @RequestParam("equipa") String equipa,
+    public String criarCoordenador(@RequestParam int idCoordenador,
+                                   @RequestParam String equipa,
                                    Model model) {
         Coordenador coordenador = coordenadorService.getCoordenador(idCoordenador); // Procura pelo ID
             if (coordenador == null) {
@@ -50,7 +50,7 @@ public class CoordenadorController {
 
 
     @PostMapping("/coordenador/removercoordenador")
-    public String removerCoordenador(@RequestParam("id") int id, Model model) {
+    public String removerCoordenador(@RequestParam int id, Model model) {
         coordenadorService.deleteCoordenadorById(id);        
         model.addAttribute("mensagem", "Coordenador removido com sucesso!");
         return "redirect:/coordenador";

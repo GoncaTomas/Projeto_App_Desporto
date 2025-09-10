@@ -15,7 +15,7 @@ public class DownloadController {
     private ArquivoPdfRepository arquivoPdfRepository;
 
     @GetMapping("/download/{id}")
-    public void downloadArquivo(@PathVariable("id") Long id, HttpServletResponse response) {
+    public void downloadArquivo(@PathVariable Long id, HttpServletResponse response) {
         try {
             // Procura o arquivo PDF na base de dados pelo ID
             ArquivoPdf arquivoPdf = arquivoPdfRepository.findById(id).orElse(null);

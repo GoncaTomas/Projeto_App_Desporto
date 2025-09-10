@@ -19,7 +19,7 @@ public class VerArquivoController {
     private ArquivoPdfRepository arquivoPdfRepository; // Repositório para acesso à base de dados
 
     @GetMapping("relatorio/verrelatorio/{id}")
-    public void visualizarPdf(@PathVariable("id") Long id, HttpServletResponse response) {
+    public void visualizarPdf(@PathVariable Long id, HttpServletResponse response) {
         try {
             // Busca o arquivo PDF na base de dados pelo ID
             ArquivoPdf arquivoPdf = arquivoPdfRepository.findById(id).orElse(null);

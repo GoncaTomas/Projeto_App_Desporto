@@ -39,9 +39,9 @@ public class TreinoController {
     }
 
     @PostMapping("/treino/criartreino")
-    public String criarTreino(@RequestParam("datahora") String datahora,
-                              @RequestParam("nome_equipa") String nome_equipa,
-                              @RequestParam("nome_treinador") String nome_treinador,
+    public String criarTreino(@RequestParam String datahora,
+                              @RequestParam String nome_equipa,
+                              @RequestParam String nome_treinador,
                               Model model) {
 
         Treino novoTreino = new Treino();
@@ -63,10 +63,10 @@ public class TreinoController {
 
 
     @PostMapping("/treino/editartreino")
-    public String editarTreino(@RequestParam("cod_treino") int cod_treino,
-                               @RequestParam("datahora") String datahora,
-                               @RequestParam("nome_equipa") String nome_equipa,
-                               @RequestParam("nome_treinador") String nome_treinador,
+    public String editarTreino(@RequestParam int cod_treino,
+                               @RequestParam String datahora,
+                               @RequestParam String nome_equipa,
+                               @RequestParam String nome_treinador,
                                 Model model) throws Exception {
 
         Treino treino = treinoService.getTreinoById(cod_treino);

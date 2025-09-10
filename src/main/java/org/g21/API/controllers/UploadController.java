@@ -53,7 +53,7 @@ public class UploadController {
     }
 
     @PostMapping("/relatorio/uploadrelatorio")
-    public ResponseEntity<String> handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<String> handleFileUpload(@RequestParam MultipartFile file) {
         try {
         // Converte o arquivo numa matriz de bytes
             byte[] arquivoBytes = file.getBytes();
