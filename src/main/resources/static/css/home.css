@@ -64,11 +64,8 @@
 }
 
 
-header{
-  background-image: linear-gradient(45deg, rgb(248, 248, 233), white, gray, rgb(39, 38, 38));
-  border-bottom-color: darkgray;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
+header {
+  background-color: #0a1f2a; /* azul petróleo */
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -80,13 +77,14 @@ header{
   z-index: 100;
 }
 
+
 /*Ordenar o simbolo do vitoria a esquerda*/
 .lado-esquerdo{
   display: flex;
   align-items: center;
 }
 
-.logo-vitoria{
+.logo{
   width: 50px;
   margin-left: 25px;
   margin-top: 5px;
@@ -95,7 +93,7 @@ header{
   transition: opacity 0.5s;
 }
 
-.logo-vitoria:hover{
+.logo:hover{
   margin-top: 80px;
   width: 100px;
   opacity: 0.8;
@@ -144,7 +142,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/pavilhao.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/imagem-desporto.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -178,10 +176,11 @@ p{
 }
 
 .descricao{
-  color: #fff;
-  font-size: 20px;
+  color: #FFFFFF;
+  text-shadow: 0 2px 1px #0a1f2a;
+  font-size: 45px;
   line-height: 15px;
-  margin-left: 240px;
+  margin-left: 380px;
 }
 
 .caixa-div {

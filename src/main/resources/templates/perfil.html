@@ -8,21 +8,17 @@
 <body>
   <header>
     <div class="lado-esquerdo">
-      <img class="logo-vitoria" src="../images/Logo-Vitoria.png">
+      <img class="logo" src="../images/icone-sport.png">
     </div>
   </header>
   <div class="caixa-div">
     <div class="zona-perfil-utilizador">
-      <h1>Perfil do Utilizador</h1>
+      <h1>Meu Perfil</h1>
     </div>
     <div class="perfil-info">
       <div>
-        <p>Username:</p>
+        <p>Nome de Utilizador:</p>
         <span th:text="${user.username}"></span>
-      </div>
-      <div>
-        <p>Password:</p>
-        <span th:text="${user.password}"></span>
       </div>
       <div>
         <p>Data de Nascimento:</p>
@@ -37,10 +33,8 @@
         <span th:text="${user.telefone}"></span>
       </div>
     </div>
-    <div class="botao-pai">
-      <div class="botao-criar">
+    <div class="botao-editar">
         <button class="center" onclick="window.location.href='/perfil/editarperfil'">Editar Perfil</button>
-      </div>
     </div>
     <div class="botao-voltar">
       <button class="center" onclick="window.location.href='/home'">Voltar à Página Inicial</button>
